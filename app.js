@@ -1,10 +1,9 @@
 const { Client, MessageMedia, LocalAuth } = require('whatsapp-web.js');
 const express = require('express');
-const { header, body, validationResult } = require('express-validator');
+const { body, validationResult } = require('express-validator');
 const socketIO = require('socket.io');
 const qrcode = require('qrcode');
 const http = require('http');
-const cors = require('cors')
 const fs = require('fs');
 const { phoneNumberFormatter } = require('./helpers/formatter');
 const fileUpload = require('express-fileupload');
@@ -18,12 +17,10 @@ const server = http.createServer(app);
 const io = socketIO(server);
 
 app.use(express.json());
-app.use(cors({
-  origin: "*"
-}))
 app.use(express.urlencoded({
   extended: true
 }));
+app.use(express.static(__dirname));
 
 /**
  * BASED ON MANY QUESTIONS
@@ -38,6 +35,17 @@ app.use(fileUpload({
 
 app.get('/', (req, res) => {
   res.sendFile('index.html', {
+    root: __dirname
+  });
+});
+
+app.get('/send', (req, res) => {
+  res.sendFile('send.html', {
+    root: __dirname
+  });
+});
+app.get('/success', (req, res) => {
+  res.sendFile('success.html', {
     root: __dirname
   });
 });
@@ -61,10 +69,14 @@ const client = new Client({
 });
 
 client.on('message', msg => {
+  let chat = msg.body;
+  chat = chat.toLowerCase();
   if (msg.body == '!ping') {
     msg.reply('pong');
   } else if (msg.body == 'good morning') {
     msg.reply('selamat pagi');
+  } else if (chat.includes('love')) {
+    msg.reply('I love u too sayangku');
   } else if (msg.body == '!groups') {
     client.getChats().then(chats => {
       const groups = chats.filter(chat => chat.isGroup);
@@ -166,12 +178,12 @@ const checkRegisteredNumber = async function(number) {
 
 // Send message
 app.post('/send-message', [
- header('number').notEmpty(),
- header('message').notEmpty(),
+  body('number').notEmpty(),
+  body('message').notEmpty(),
 ], async (req, res) => {
   const errors = validationResult(req).formatWith(({
     msg
- }) => {
+  }) => {
     return msg;
   });
 
@@ -182,8 +194,8 @@ app.post('/send-message', [
     });
   }
 
-  const number = phoneNumberFormatter(req.header.number);
-  const message = req.header.message;
+  const number = phoneNumberFormatter(req.body.number);
+  const message = req.body.message;
 
   const isRegisteredNumber = await checkRegisteredNumber(number);
 
@@ -195,7 +207,6 @@ app.post('/send-message', [
   }
 
   client.sendMessage(number, message).then(response => {
-    // res.header('Access-Control-Allow-Origin', '*')
     res.status(200).json({
       status: true,
       response: response
@@ -207,9 +218,6 @@ app.post('/send-message', [
     });
   });
 });
-
-
-
 
 // Send media
 app.post('/send-media', async (req, res) => {
