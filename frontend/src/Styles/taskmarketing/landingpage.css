@@ -1,0 +1,49 @@
+
+
+.welcome{
+    margin: top;
+    height: 300px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    font-family: 'Poppins';
+    font-size:100px;
+}
+ 
+.atas {
+    justify-content:center;
+    align-items:center;
+}
+
+.ici{
+    justify-content:center;
+    align-items:center;
+}
+
+.title{
+    font-size:20px;
+    font-family: 'Poppins';
+}
+
+.title1{
+    font-size:40px;
+    font-family: 'Poppins';
+    
+}
+
+.stato{
+    font-family: 'poppins';
+}
+
+.button {
+    font-family: 'Poppins';
+}
+
+.gambar {
+    font-size:10px;
+    /* position: absolute;
+width: 4000px;
+height: 2924px;
+
+background: url(.png); */
+}

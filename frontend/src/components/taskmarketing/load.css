@@ -1,0 +1,92 @@
+*{
+  margin:0;
+  padding:0;
+  text-decoration: none;
+}
+.contain{
+  display:flex;
+  
+}
+main{
+  width:100%;
+  /* padding:20px;
+  height:100%; */
+}
+.sidebar{
+ 
+  color: white;
+  height: 120vh;
+  width: 50px;
+  transition: all 0.5s;
+}
+.top_section{
+  display: flex;
+  align-items:center;
+  padding: 20px 15px;
+}
+.logo{
+  font-size:22px;
+}
+.bars{
+  display:flex;
+  font-size:20px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+.link{
+  display:flex;
+  color: #fff;
+  padding:10px 15px;
+  gap: 15px;
+  transition: all 0.5s;
+}
+
+.link:hover{
+  background:white;
+  color:black;
+  transition: all 0.5;
+}
+
+.active{
+  background:white;
+  color:black;
+  box-shadow: 5px 5px;
+}
+.icon{
+  font-size:20px;
+
+}
+.link_text{
+  font-size:15px;
+  margin-top: 5px;
+  margin-left: 2px;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.toast.show {
+  opacity: 1;
+}
+.toast.success {
+  background-color: green;
+}
+.toast.error {
+  background-color: red;
+}
+
+.kotak{
+  width:500px;
+}
