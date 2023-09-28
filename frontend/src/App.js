@@ -6,19 +6,19 @@ import EditUser from "./components/EditUser";
 
 //<----MARKETING---->
 // import './components/taskmarketing/load.css';
-import LandingPage from "./components/taskmarketing/LandingPage";
-import NavigatorBar from "./components/taskmarketing/NavigatorBar";
-import SideBar from "./components/taskmarketing/SideBar";
-import Dashboard from "./components/taskmarketing/Dashboard"
-import MessagePage from "./components/taskmarketing/MessagePage";
-import BlastPage from "./components/taskmarketing/BlastPage.js";
-import CreateClient from "./components/taskmarketing/CreateClient";
-import UpdateClient from "./components/taskmarketing/UpdateClient.js";
-import GroupContacts from "./components/taskmarketing/GroupContacts.js";
-import UpdateGroup from "./components/taskmarketing/UpdateGroup.js";
-import MemberGroup from "./components/taskmarketing/MemberGroup.js";
-import GroupPage from "./components/taskmarketing/GroupPage.js";
-import History from "./components/taskmarketing/History.js";
+import LandingPage from "./components/kirmit/LandingPage";
+import NavigatorBar from "./components/kirmit/NavigatorBar";
+import SideBar from "./components/kirmit/SideBar";
+import Dashboard from "./components/kirmit/Dashboard"
+import MessagePage from "./components/kirmit/MessagePage";
+import BlastPage from "./components/kirmit/BlastPage.js";
+import CreateClient from "./components/kirmit/CreateClient";
+import UpdateClient from "./components/kirmit/UpdateClient.js";
+import GroupContacts from "./components/kirmit/GroupContacts.js";
+import UpdateGroup from "./components/kirmit/UpdateGroup.js";
+import MemberGroup from "./components/kirmit/MemberGroup.js";
+import GroupPage from "./components/kirmit/GroupPage.js";
+import History from "./components/kirmit/History.js";
 
 function App() {
   return (

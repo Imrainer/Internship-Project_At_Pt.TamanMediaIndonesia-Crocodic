@@ -1,6 +1,6 @@
 import React,{ useEffect, Component} from 'react'
 import {Col, Container, Row, } from "react-bootstrap" 
-import "../../Styles/taskmarketing/landingpage.css"
+import "../../Styles/kirmit/landingpage.css"
 import NavigatorBar from './NavigatorBar'
 import img from "../../img/icon3d.png"
 import SideBar from './SideBar'
@@ -27,7 +27,7 @@ function LandingPage  ()  {
           <h5 className="title">Hai, Selamat Datang</h5>
           <h2 className="title1">Mengirimkan Pesan 
           hanya dengan  sekali klik!</h2> 
-          <a href="/dashboard" class=" btn btn-info text-light  "><h4 className=" stato mt-1 py-1 fw-bold">START NOW!</h4></a>
+          <a href="/dashboard" class=" btn btn-info text-light"><h4 className=" stato mt-1 py-1 fw-bold">START NOW!</h4></a>
           </Col>
       
         </Row>

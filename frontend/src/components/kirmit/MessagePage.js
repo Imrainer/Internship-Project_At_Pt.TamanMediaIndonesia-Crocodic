@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from "react"
 import { Container, } from "react-bootstrap" 
 import NavigatorBar from './NavigatorBar'
-import "../../Styles/taskmarketing/navbar.css"
+
 import { useNavigate } from 'react-router-dom'
 import axios from "axios";
 import SideBar from './SideBar'
